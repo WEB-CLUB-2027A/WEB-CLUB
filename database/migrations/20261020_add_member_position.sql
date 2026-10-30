@@ -1,0 +1,2 @@
+ALTER TABLE members
+    ADD COLUMN position VARCHAR(100) NOT NULL DEFAULT '' AFTER user_id;

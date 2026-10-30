@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#06162a">
+    <title>My Profile | WEB-CLUB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body class="community-profile-page" data-theme="dark">
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo" aria-label="WEB-CLUB home">
+                <i class="bx bx-code-alt" aria-hidden="true"></i>
+                <span class="logo-copy">
+                    <strong>WEB<span>-CLUB</span></strong>
+                    <small>Learn · Build · Grow Together</small>
+                </span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                <i class="bx bx-menu" aria-hidden="true"></i>
+            </button>
+            <nav class="nav-menu" id="primary-navigation" aria-label="Main navigation">
+                <a href="../index.html"><i class="bx bxs-home" aria-hidden="true"></i>Home</a>
+                <a href="./about.html"><i class="bx bx-group" aria-hidden="true"></i>About</a>
+                <div class="community-menu">
+                    <button class="community-toggle" type="button" aria-expanded="false" aria-controls="community-dropdown">
+                        Community <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="community-dropdown" id="community-dropdown" hidden>
+                        <a href="./projects.html"><i class="bx bx-folder" aria-hidden="true"></i><span><strong>Projects</strong><small>Explore student projects</small></span></a>
+                        <a href="./events.html"><i class="bx bx-calendar-event" aria-hidden="true"></i><span><strong>Events</strong><small>Discover club activities</small></span></a>
+                        <a href="./members.html"><i class="bx bx-group" aria-hidden="true"></i><span><strong>Members</strong><small>Meet the community</small></span></a>
+                    </div>
+                </div>
+                <a href="./contact.html"><i class="bx bx-envelope" aria-hidden="true"></i>Contact</a>
+                <div class="nav-actions">
+                    <a href="../../admin/public/login.html" class="btn btn-outline"><i class="bx bx-user" aria-hidden="true"></i>Login</a>
+                    <a href="../../admin/public/register.html" class="btn btn-primary"><i class="bx bx-paper-plane" aria-hidden="true"></i>Join Club</a>
+                </div>
+            </nav>
+            <div class="nav-tools">
+                <div class="nav-theme-toggle" role="group" aria-label="Color theme">
+                    <button class="theme-choice" type="button" data-theme-choice="light" aria-label="Switch to light mode" aria-pressed="false"><i class="bx bx-sun" aria-hidden="true"></i></button>
+                    <button class="theme-choice is-active" type="button" data-theme-choice="dark" aria-label="Switch to dark mode" aria-pressed="true"><i class="bx bx-moon" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-page container">
+        <p class="profile-page-status" id="profilePageStatus" role="status" aria-live="polite">Loading your profile…</p>
+        <section class="public-profile-hero">
+            <div class="public-profile-cover" id="publicProfileCover">
+                <span class="public-cover-glow"></span>
+                <button class="profile-cover-edit" id="profileCoverEdit" type="button"><i class="bx bx-camera" aria-hidden="true"></i>Change cover</button>
+            </div>
+            <div class="public-profile-identity">
+                <div class="public-avatar-wrap">
+                    <div class="public-profile-avatar" id="publicProfileAvatar"><i class="bx bx-desktop" aria-hidden="true"></i></div>
+                    <button class="profile-avatar-edit" id="profileAvatarEdit" type="button" aria-label="Edit profile photo"><i class="bx bx-camera" aria-hidden="true"></i></button>
+                </div>
+                <div class="public-profile-name">
+                    <h1><span id="publicProfileName">WEB-CLUB Member</span><span class="public-profile-verified" id="profileVerified" hidden><i class="bx bxs-badge-check" aria-label="Administrator"></i></span></h1>
+                    <p><span id="publicProfilePosition">WEB-CLUB Member</span><span class="profile-dot"></span><span id="publicProfileEmail">—</span></p>
+                    <div class="public-profile-meta">
+                        <span><i class="bx bx-map" aria-hidden="true"></i>WEB-CLUB Community</span>
+                        <span><i class="bx bx-calendar" aria-hidden="true"></i>Joined <time id="publicProfileJoined">—</time></span>
+                    </div>
+                </div>
+                <div class="public-profile-actions">
+                    <button class="profile-edit-button" id="profileEditButton" type="button"><i class="bx bx-edit-alt" aria-hidden="true"></i>Edit profile</button>
+                    <a class="profile-dashboard-button" id="profileDashboardButton" href="../../admin/index.html" hidden><i class="bx bx-grid-alt" aria-hidden="true"></i>Admin dashboard</a>
+                    <div class="public-profile-socials" id="publicProfileSocials" aria-label="Profile links"></div>
+                </div>
+                <p class="public-profile-bio" id="publicProfileBio"></p>
+            </div>
+        </section>
+
+        <section class="profile-metrics" aria-label="Profile overview">
+            <article class="profile-metric metric-blue">
+                <div class="profile-metric-heading">
+                    <span class="profile-metric-icon"><i class="bx bx-group" aria-hidden="true"></i></span>
+                    <span>Total members</span>
+                </div>
+                <strong id="profileMemberCount">0</strong>
+                <small>Registered community members</small>
+            </article>
+            <article class="profile-metric metric-green">
+                <div class="profile-metric-heading">
+                    <span class="profile-metric-icon"><i class="bx bx-folder" aria-hidden="true"></i></span>
+                    <span>Projects</span>
+                </div>
+                <strong id="profileProjectCount">0</strong>
+                <small>Projects shared by members</small>
+            </article>
+            <article class="profile-metric metric-violet">
+                <div class="profile-metric-heading">
+                    <span class="profile-metric-icon"><i class="bx bx-calendar-event" aria-hidden="true"></i></span>
+                    <span>Events</span>
+                </div>
+                <strong id="profileEventCount">0</strong>
+                <small>Club events in the community</small>
+            </article>
+            <article class="profile-metric metric-orange">
+                <div class="profile-metric-heading">
+                    <span class="profile-metric-icon"><i class="bx bx-code-alt" aria-hidden="true"></i></span>
+                    <span>Skills</span>
+                </div>
+                <strong id="profileSkillCount">0</strong>
+                <small>Skills listed on your profile</small>
+            </article>
+        </section>
+
+        <section class="profile-main-grid">
+            <div class="profile-primary-column">
+                <article class="profile-section-card about-profile-card">
+                    <div class="profile-section-heading">
+                        <h2><i class="bx bx-user" aria-hidden="true"></i>About me</h2>
+                        <button class="profile-text-edit" type="button" data-open-profile-editor><i class="bx bx-edit-alt" aria-hidden="true"></i>Edit</button>
+                    </div>
+                    <p class="profile-about-text" id="profileAboutText">Loading your introduction…</p>
+                    <div class="profile-skill-chips" id="profileSkillChips"></div>
+                </article>
+
+                <article class="profile-section-card profile-projects-card">
+                    <div class="profile-section-heading">
+                        <h2><i class="bx bx-folder-open" aria-hidden="true"></i>Community projects</h2>
+                        <a href="./projects.html">Explore projects<i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="profile-work-grid" id="profileProjects" aria-live="polite">
+                        <p class="profile-empty-state">Loading community projects…</p>
+                    </div>
+                </article>
+
+                <article class="profile-section-card profile-events-card">
+                    <div class="profile-section-heading">
+                        <h2><i class="bx bx-calendar-event" aria-hidden="true"></i>Community events</h2>
+                        <a href="./events.html">Explore events<i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="profile-work-grid" id="profileEvents" aria-live="polite">
+                        <p class="profile-empty-state">Loading community events…</p>
+                    </div>
+                </article>
+
+                <article class="profile-section-card profile-member-card">
+                    <div class="profile-section-heading">
+                        <h2><i class="bx bx-group" aria-hidden="true"></i>Community members</h2>
+                        <a href="./members.html">Meet members<i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="profile-member-grid" id="profileMembers" aria-live="polite">
+                        <p class="profile-empty-state">Loading community members…</p>
+                    </div>
+                </article>
+            </div>
+
+            <aside class="profile-secondary-column">
+                <article class="profile-section-card profile-contact-card">
+                    <div class="profile-section-heading">
+                        <h2><i class="bx bx-id-card" aria-hidden="true"></i>Contact information</h2>
+                    </div>
+                    <div class="profile-contact-items">
+                        <div><i class="bx bx-envelope" aria-hidden="true"></i><span><small>Email</small><strong id="profileContactEmail">—</strong></span></div>
+                        <div><i class="bx bx-award" aria-hidden="true"></i><span><small>Position</small><strong id="profileContactPosition">—</strong></span></div>
+                        <div id="profileGithubRow" hidden><i class="bx bxl-github" aria-hidden="true"></i><span><small>GitHub</small><a id="profileGithub" target="_blank" rel="noopener noreferrer">—</a></span></div>
+                        <div id="profileLinkedinRow" hidden><i class="bx bxl-linkedin" aria-hidden="true"></i><span><small>LinkedIn</small><a id="profileLinkedin" target="_blank" rel="noopener noreferrer">—</a></span></div>
+                    </div>
+                </article>
+                <article class="profile-section-card profile-activity-card">
+                    <div class="profile-section-heading">
+                        <h2><i class="bx bx-pulse" aria-hidden="true"></i>Recent activity</h2>
+                    </div>
+                    <div class="profile-activity-list" id="profileActivity" aria-live="polite">
+                        <p class="profile-empty-state">Loading recent activity…</p>
+                    </div>
+                </article>
+                <button class="profile-logout-button" id="profileLogoutButton" type="button">
+                    <i class="bx bx-log-out" aria-hidden="true"></i>Log out
+                </button>
+            </aside>
+        </section>
+    </main>
+
+    <dialog class="profile-edit-dialog" id="profileEditDialog">
+        <form class="profile-edit-form" id="profileEditForm">
+            <div class="profile-dialog-heading">
+                <span class="profile-dialog-icon"><i class="bx bx-user-edit" aria-hidden="true"></i></span>
+                <div><h2>Edit your profile</h2><p>Update your public WEB-CLUB profile details.</p></div>
+                <button class="profile-dialog-close" id="profileDialogClose" type="button" aria-label="Close"><i class="bx bx-x" aria-hidden="true"></i></button>
+            </div>
+            <div class="profile-edit-fields" id="memberProfileFields">
+                <label for="memberBio">About me</label>
+                <textarea id="memberBio" name="bio" maxlength="2000" rows="4" placeholder="Tell the community a little about yourself"></textarea>
+                <label for="memberSkills">Skills</label>
+                <input id="memberSkills" name="skills" maxlength="1000" placeholder="HTML, CSS, JavaScript">
+                <label for="memberProfileImage">Profile photo URL</label>
+                <input id="memberProfileImage" name="profile_image" type="url" maxlength="2048" placeholder="https://example.com/photo.jpg">
+                <label for="memberCoverImage">Cover image URL</label>
+                <input id="memberCoverImage" name="cover_image" type="url" maxlength="2048" placeholder="https://example.com/cover.jpg">
+                <label for="memberGithub">GitHub URL</label>
+                <input id="memberGithub" name="github_url" type="url" maxlength="2048" placeholder="https://github.com/username">
+                <label for="memberLinkedin">LinkedIn URL</label>
+                <input id="memberLinkedin" name="linkedin_url" type="url" maxlength="2048" placeholder="https://linkedin.com/in/username">
+            </div>
+            <div class="profile-edit-fields" id="adminProfileFields" hidden>
+                <label for="adminProfileName">Display name</label>
+                <input id="adminProfileName" name="name" maxlength="100" required>
+                <label for="adminProfileImage">Profile photo URL</label>
+                <input id="adminProfileImage" name="profile_image" type="url" maxlength="2048" placeholder="https://example.com/photo.jpg">
+                <label for="adminCoverImage">Cover image URL</label>
+                <input id="adminCoverImage" name="cover_image" type="url" maxlength="2048" placeholder="https://example.com/cover.jpg">
+                <label for="adminGithub">GitHub URL</label>
+                <input id="adminGithub" name="github_url" type="url" maxlength="2048" placeholder="https://github.com/username">
+                <label for="adminLinkedin">LinkedIn URL</label>
+                <input id="adminLinkedin" name="linkedin_url" type="url" maxlength="2048" placeholder="https://linkedin.com/in/username">
+            </div>
+            <p class="profile-form-status" id="profileFormStatus" role="status" aria-live="polite"></p>
+            <div class="profile-dialog-actions">
+                <button class="profile-cancel-button" id="profileDialogCancel" type="button">Cancel</button>
+                <button class="profile-save-button" id="profileSaveButton" type="submit"><i class="bx bx-save" aria-hidden="true"></i>Save profile</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-brand-link" aria-label="WEB-CLUB home">
+                    <i class="bx bx-code-alt" aria-hidden="true"></i>
+                    <span class="footer-brand-copy">
+                        <strong>WEB<span>-CLUB</span></strong>
+                        <small>Learn · Build · Grow Together</small>
+                    </span>
+                </a>
+            </div>
+            <nav class="footer-column" aria-label="Quick links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-column" aria-label="Community">
+                <h2>Community</h2>
+                <ul>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="members.html">Members</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="footer-social-links">
+                    <a class="footer-social-link" href="https://github.com/web-club" target="_blank" rel="noopener noreferrer" aria-label="WEB-CLUB on GitHub">
+                        <i class="bx bxl-github" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="WEB-CLUB on LinkedIn">
+                        <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="WEB-CLUB on Facebook">
+                        <i class="bx bxl-facebook" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-bottom-copy">© 2026 <strong>WEB-CLUB.</strong> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

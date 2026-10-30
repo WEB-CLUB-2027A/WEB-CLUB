@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WEB-CLUB | Web Development Community</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="WEB-CLUB home">
+                <i class="bx bx-code-alt" aria-hidden="true"></i>
+                <span class="logo-copy">
+                    <strong>WEB<span>-CLUB</span></strong>
+                    <small>Learn · Build · Grow Together</small>
+                </span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                <i class="bx bx-menu" aria-hidden="true"></i>
+            </button>
+
+            <nav class="nav-menu" id="primary-navigation" aria-label="Main navigation">
+                <a href="index.html" class="active" aria-current="page"><i class="bx bxs-home" aria-hidden="true"></i>Home</a>
+                <a href="pages/about.html"><i class="bx bx-group" aria-hidden="true"></i>About</a>
+                <div class="community-menu">
+                    <button class="community-toggle" type="button" aria-expanded="false" aria-controls="community-dropdown">
+                        Community <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="community-dropdown" id="community-dropdown" hidden>
+                        <a href="pages/projects.html"><i class="bx bx-folder" aria-hidden="true"></i><span><strong>Projects</strong><small>Explore student projects</small></span></a>
+                        <a href="pages/events.html"><i class="bx bx-calendar-event" aria-hidden="true"></i><span><strong>Events</strong><small>Discover club activities</small></span></a>
+                        <a href="pages/members.html"><i class="bx bx-group" aria-hidden="true"></i><span><strong>Members</strong><small>Meet the community</small></span></a>
+                    </div>
+                </div>
+                <a href="pages/contact.html"><i class="bx bx-envelope" aria-hidden="true"></i>Contact</a>
+                <div class="nav-actions">
+                    <a href="../admin/public/login.html" class="btn btn-outline"><i class="bx bx-user" aria-hidden="true"></i>Login</a>
+                    <a href="../admin/public/register.html" class="btn btn-primary"><i class="bx bx-paper-plane" aria-hidden="true"></i>Join Club</a>
+                </div>
+            </nav>
+
+            <div class="nav-tools">
+                <div class="nav-theme-toggle" role="group" aria-label="Color theme">
+                    <button class="theme-choice is-active" type="button" data-theme-choice="light" aria-label="Switch to light mode" aria-pressed="true"><i class="bx bx-sun" aria-hidden="true"></i></button>
+                    <button class="theme-choice" type="button" data-theme-choice="dark" aria-label="Switch to dark mode" aria-pressed="false"><i class="bx bx-moon" aria-hidden="true"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <main>
+
+        <section class="hero">
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        <i class="bx bx-code-alt" aria-hidden="true"></i>
+                        Student Web Development Club
+                    </span>
+
+                    <h1>
+                        Learn.
+                        <span>Build.</span>
+                        Create.
+                    </h1>
+
+                    <p>
+                        Welcome to WEB-CLUB — a community where
+                        students learn web development, build real
+                        projects, and grow together.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="pages/projects.html" class="btn btn-primary">
+                                Explore Projects <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="../admin/public/register.html" class="btn btn-outline">
+                            Join WEB-CLUB <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-card">
+
+                    <div class="code-window">
+
+                        <div class="code-header">
+
+                            <div class="code-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span>
+                                web-club.js
+                            </span>
+
+                        </div>
+
+                        <div class="code-content">
+
+                            <p>
+                                <span class="keyword">const</span>
+                                club =
+                                <span class="string">
+                                    "WEB-CLUB"
+                                </span>;
+                            </p>
+
+                            <p>
+                                <span class="keyword">const</span>
+                                goal =
+                                <span class="string">
+                                    "Build the future"
+                                </span>;
+                            </p>
+
+                            <p>
+                                <span class="keyword">function</span>
+                                <span class="function">
+                                    learn
+                                </span>() {
+                            </p>
+
+                            <p class="indent">
+                                <span class="keyword">
+                                    return
+                                </span>
+                                "Keep coding 🚀";
+                            </p>
+
+                            <p>
+                                }
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SKILLS ================= -->
+        <section class="skills-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        WHAT WE LEARN
+                    </span>
+
+                    <h2>
+                        Build Your Web Skills
+                    </h2>
+
+                    <p>
+                        Learn the technologies used to create
+                        modern websites and applications.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bx bxl-html5" aria-hidden="true"></i>
+                        </div>
+
+                        <h3>
+                            HTML5
+                        </h3>
+
+                        <p>
+                            Build the structure of modern websites.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bx bxl-css3" aria-hidden="true"></i>
+                        </div>
+
+                        <h3>
+                            CSS3
+                        </h3>
+
+                        <p>
+                            Create beautiful and responsive designs.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bx bxl-javascript" aria-hidden="true"></i>
+                        </div>
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            Make websites interactive and dynamic.
+                        </p>
+
+                    </div>
+
+
+                    <div class="skill-card">
+
+                        <div class="skill-icon">
+                            <i class="bx bxl-git" aria-hidden="true"></i>
+                        </div>
+
+                        <h3>
+                            Git & GitHub
+                        </h3>
+
+                        <p>
+                            Collaborate and manage your projects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta">
+
+                    <h2>
+                        Ready to Build Something Amazing?
+                    </h2>
+
+                    <p>
+                        Join WEB-CLUB and start building your
+                        future with technology.
+                    </p>
+
+                    <a href="../admin/public/register.html" class="btn btn-primary">
+                        Join the Club <i class="bx bx-right-arrow-alt" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-brand-link" aria-label="WEB-CLUB home">
+                    <i class="bx bx-code-alt" aria-hidden="true"></i>
+                    <span class="footer-brand-copy">
+                        <strong>WEB<span>-CLUB</span></strong>
+                        <small>Learn · Build · Grow Together</small>
+                    </span>
+                </a>
+            </div>
+            <nav class="footer-column" aria-label="Quick links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-column" aria-label="Community">
+                <h2>Community</h2>
+                <ul>
+                    <li><a href="pages/projects.html">Projects</a></li>
+                    <li><a href="pages/members.html">Members</a></li>
+                    <li><a href="pages/events.html">Events</a></li>
+                </ul>
+            </nav>
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="footer-social-links">
+                    <a class="footer-social-link" href="https://github.com/web-club" target="_blank" rel="noopener noreferrer" aria-label="WEB-CLUB on GitHub">
+                        <i class="bx bxl-github" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="WEB-CLUB on LinkedIn">
+                        <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="WEB-CLUB on Facebook">
+                        <i class="bx bxl-facebook" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-bottom-copy">© 2026 <strong>WEB-CLUB.</strong> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

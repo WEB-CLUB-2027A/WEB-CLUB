@@ -1,0 +1,3 @@
+ALTER TABLE users
+    ADD COLUMN profile_image VARCHAR(2048) NOT NULL DEFAULT '' AFTER role,
+    ADD COLUMN cover_image VARCHAR(2048) NOT NULL DEFAULT '' AFTER profile_image;

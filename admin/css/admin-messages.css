@@ -1,0 +1,332 @@
+.messages-main {
+    max-width: 1480px;
+}
+
+.message-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.messages-panel {
+    margin-top: 17px;
+}
+
+.messages-heading {
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+}
+
+.message-status-line {
+    min-height: 20px;
+    margin: 13px 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.message-status-line.error {
+    color: #ff9ca5;
+}
+
+.message-status-line.success {
+    color: #8ee8c0;
+}
+
+.messages-list {
+    display: grid;
+    gap: 12px;
+}
+
+.message-card {
+    min-width: 0;
+    padding: 17px;
+    overflow-wrap: anywhere;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(7, 20, 38, 0.48);
+    transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.message-card:hover {
+    border-color: rgba(75, 156, 255, 0.32);
+    background: rgba(14, 34, 58, 0.72);
+}
+
+.message-card.unread {
+    border-left: 3px solid #399cff;
+    background: rgba(29, 84, 145, 0.14);
+}
+
+.message-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.message-card h3 {
+    margin: 0 0 5px;
+    color: #e9f1fc;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.message-sender {
+    margin: 0;
+    color: #8ea4c0;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.message-status {
+    flex: 0 0 auto;
+    padding: 4px 9px;
+    border: 1px solid rgba(77, 169, 255, 0.16);
+    border-radius: 999px;
+    color: #83c4ff;
+    background: rgba(47, 140, 255, 0.11);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+}
+
+.message-status.read {
+    border-color: rgba(33, 200, 135, 0.16);
+    color: #83e4b7;
+    background: rgba(33, 200, 135, 0.1);
+}
+
+.message-body {
+    margin: 14px 0 10px;
+    color: #bac9dc;
+    font-size: 12px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+.message-date {
+    margin: 0 0 13px;
+    color: #7187a4;
+    font-size: 10px;
+}
+
+.message-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.message-actions button {
+    display: inline-flex;
+    min-height: 32px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.18s ease, background 0.18s ease;
+}
+
+.message-actions button:hover {
+    filter: brightness(1.15);
+}
+
+.edit-message-btn {
+    border-color: rgba(77, 169, 255, 0.2) !important;
+    color: #8dcaff;
+    background: rgba(47, 140, 255, 0.13);
+}
+
+.mark-read-btn {
+    border-color: rgba(77, 169, 255, 0.2) !important;
+    color: #8dcaff;
+    background: rgba(47, 140, 255, 0.13);
+}
+
+.mark-unread-btn {
+    border-color: rgba(255, 173, 98, 0.2) !important;
+    color: #ffc58e;
+    background: rgba(255, 173, 98, 0.1);
+}
+
+.delete-message-btn {
+    border-color: rgba(237, 83, 98, 0.18) !important;
+    color: #ff9ca5;
+    background: rgba(237, 83, 98, 0.1);
+}
+
+.empty-messages {
+    padding: 38px 18px;
+    border: 1px dashed rgba(148, 163, 184, 0.2);
+    border-radius: 10px;
+    color: #91a4c0;
+    background: rgba(7, 20, 38, 0.32);
+    font-size: 12px;
+    text-align: center;
+}
+
+.message-heading-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.message-editor-dialog {
+    width: min(600px, calc(100% - 28px));
+    max-height: min(88vh, 840px);
+    padding: 0;
+    overflow: auto;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 15px;
+    color: var(--text);
+    background: #0b1b30;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.message-editor-dialog::backdrop {
+    background: rgba(2, 8, 18, 0.76);
+    backdrop-filter: blur(3px);
+}
+
+.message-editor-form {
+    display: grid;
+    gap: 15px;
+    padding: 23px;
+}
+
+.message-editor-title {
+    margin: 0;
+    color: #edf5ff;
+    font-size: 20px;
+}
+
+.message-editor-description {
+    margin: -8px 0 0;
+    color: #9aacc4;
+    font-size: 12px;
+}
+
+.message-editor-fields {
+    display: grid;
+    gap: 12px;
+}
+
+.message-editor-field {
+    display: grid;
+    gap: 6px;
+    color: #b9c9de;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.message-editor-field input,
+.message-editor-field textarea {
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 11px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 8px;
+    outline: none;
+    color: #eaf2fd;
+    background: #071426;
+    font: inherit;
+    font-size: 12px;
+}
+
+.message-editor-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.message-editor-field input:focus,
+.message-editor-field textarea:focus {
+    border-color: rgba(64, 145, 255, 0.7);
+    box-shadow: 0 0 0 3px rgba(47, 140, 255, 0.13);
+}
+
+.message-editor-status {
+    min-height: 0;
+    margin: 0;
+    color: #91a4c0;
+    font-size: 12px;
+}
+
+.message-editor-status.error {
+    color: #ff9ca5;
+}
+
+.message-editor-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.message-editor-cancel,
+.message-editor-save {
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.message-editor-cancel {
+    color: #b9c9de;
+    background: #10233c;
+}
+
+.message-editor-save {
+    border-color: rgba(64, 145, 255, 0.42);
+    color: white;
+    background: #176bd0;
+}
+
+.message-editor-save:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+.message-editor-dialog .bx,
+.message-actions .bx {
+    font-size: 15px;
+    line-height: 1;
+}
+
+@media (max-width: 680px) {
+    .message-heading-actions {
+        justify-content: flex-start;
+    }
+
+    .message-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .message-stats .stat-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .messages-panel {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .message-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .message-stats .stat-card:last-child {
+        grid-column: auto;
+    }
+}

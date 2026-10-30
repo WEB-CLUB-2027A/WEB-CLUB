@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | WEB-CLUB</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/projects.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo" aria-label="WEB-CLUB home">
+                <i class="bx bx-code-alt" aria-hidden="true"></i>
+                <span class="logo-copy">
+                    <strong>WEB<span>-CLUB</span></strong>
+                    <small>Learn · Build · Grow Together</small>
+                </span>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                <i class="bx bx-menu" aria-hidden="true"></i>
+            </button>
+            <nav class="nav-menu" id="primary-navigation" aria-label="Main navigation">
+                <a href="../index.html"><i class="bx bxs-home" aria-hidden="true"></i>Home</a>
+                <a href="./about.html"><i class="bx bx-group" aria-hidden="true"></i>About</a>
+                <div class="community-menu">
+                    <button class="community-toggle active" type="button" aria-expanded="false" aria-controls="community-dropdown">
+                        Community <i class="bx bx-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="community-dropdown" id="community-dropdown" hidden>
+                        <a href="./projects.html" aria-current="page"><i class="bx bx-folder" aria-hidden="true"></i><span><strong>Projects</strong><small>Explore student projects</small></span></a>
+                        <a href="./events.html"><i class="bx bx-calendar-event" aria-hidden="true"></i><span><strong>Events</strong><small>Discover club activities</small></span></a>
+                        <a href="./members.html"><i class="bx bx-group" aria-hidden="true"></i><span><strong>Members</strong><small>Meet the community</small></span></a>
+                    </div>
+                </div>
+                <a href="./contact.html"><i class="bx bx-envelope" aria-hidden="true"></i>Contact</a>
+                <div class="nav-actions">
+                    <a href="../../admin/public/login.html" class="btn btn-outline"><i class="bx bx-user" aria-hidden="true"></i>Login</a>
+                    <a href="../../admin/public/register.html" class="btn btn-primary"><i class="bx bx-paper-plane" aria-hidden="true"></i>Join Club</a>
+                </div>
+            </nav>
+            <div class="nav-tools">
+                <div class="nav-theme-toggle" role="group" aria-label="Color theme">
+                    <button class="theme-choice is-active" type="button" data-theme-choice="light" aria-label="Switch to light mode" aria-pressed="true"><i class="bx bx-sun" aria-hidden="true"></i></button>
+                    <button class="theme-choice" type="button" data-theme-choice="dark" aria-label="Switch to dark mode" aria-pressed="false"><i class="bx bx-moon" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="projects-hero">
+
+        <div class="container">
+
+            <span class="section-badge">
+                WEB-CLUB PROJECTS
+            </span>
+
+            <h1>
+                Student Projects
+            </h1>
+
+            <p>
+                Explore projects created by
+                members of our Web Club.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <main class="projects-section">
+
+        <div class="container">
+
+            <div id="projectsGrid" class="projects-grid" aria-live="polite" aria-busy="true">
+
+                <div class="loading">
+                    Loading projects...
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-brand-link" aria-label="WEB-CLUB home">
+                    <i class="bx bx-code-alt" aria-hidden="true"></i>
+                    <span class="footer-brand-copy">
+                        <strong>WEB<span>-CLUB</span></strong>
+                        <small>Learn · Build · Grow Together</small>
+                    </span>
+                </a>
+            </div>
+            <nav class="footer-column" aria-label="Quick links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <nav class="footer-column" aria-label="Community">
+                <h2>Community</h2>
+                <ul>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="members.html">Members</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="footer-social-links">
+                    <a class="footer-social-link" href="https://github.com/web-club" target="_blank" rel="noopener noreferrer" aria-label="WEB-CLUB on GitHub">
+                        <i class="bx bxl-github" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="WEB-CLUB on LinkedIn">
+                        <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="WEB-CLUB on Facebook">
+                        <i class="bx bxl-facebook" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-bottom-copy">© 2026 <strong>WEB-CLUB.</strong> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/public-core.js"></script>
+    <script src="../js/projects.js"></script>
+
+</body>
+
+</html>

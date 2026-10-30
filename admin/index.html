@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071426">
+    <title>Admin Dashboard | WEB-CLUB</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+
+<body class="admin-app">
+    <aside class="sidebar" id="sidebar" aria-label="Admin navigation">
+        <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true"><img class="brand-logo-image" alt="" hidden>W</span>
+            <span class="brand-copy">
+                <strong>WEB-CLUB</strong>
+                <small>Admin workspace</small>
+            </span>
+        </a>
+
+        <span class="sidebar-label">WORKSPACE</span>
+        <nav class="sidebar-nav">
+            <a class="sidebar-link active" href="index.html" aria-current="page">
+                <i class="nav-icon bx bx-home-alt-2" aria-hidden="true"></i>
+                <span>Dashboard</span>
+            </a>
+            <a class="sidebar-link" href="pages/profile.html">
+                <i class="nav-icon bx bx-user-circle" aria-hidden="true"></i>
+                <span>Profile</span>
+            </a>
+            <a class="sidebar-link" href="pages/admin-messages.html">
+                <i class="nav-icon bx bx-envelope" aria-hidden="true"></i>
+                <span>Messages</span>
+                <span class="nav-count" id="messageCountBadge" hidden>0</span>
+            </a>
+        </nav>
+
+        <span class="sidebar-label">CLUB</span>
+        <nav class="sidebar-nav">
+            <a class="sidebar-link" href="pages/admin-members.html">
+                <i class="nav-icon bx bx-group" aria-hidden="true"></i>
+                <span>Members</span>
+            </a>
+            <a class="sidebar-link" href="pages/admin-projects.html">
+                <i class="nav-icon bx bx-code-alt" aria-hidden="true"></i>
+                <span>Projects</span>
+            </a>
+            <a class="sidebar-link" href="pages/admin-events.html">
+                <i class="nav-icon bx bx-calendar-event" aria-hidden="true"></i>
+                <span>Events</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+
+        <a class="sidebar-link site-link" href="../frontend/index.html">
+            <i class="nav-icon bx bx-link-external" aria-hidden="true"></i>
+            <span>View website</span>
+        </a>
+
+        <div class="sidebar-profile">
+            <span class="profile-avatar" id="adminAvatar">A</span>
+            <span class="profile-copy">
+                <strong id="sidebarAdminName">Administrator</strong>
+                <small>Administrator</small>
+            </span>
+            <button class="icon-button profile-logout" id="logoutBtn" type="button" aria-label="Log out" title="Log out">
+                <i class="bx bx-log-out" aria-hidden="true"></i>
+            </button>
+        </div>
+    </aside>
+
+    <div class="app-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">
+                    <i class="bx bx-menu" aria-hidden="true"></i>
+                </button>
+                <div class="breadcrumbs">
+                    <span>Workspace</span>
+                    <i class="breadcrumb-separator bx bx-chevron-right" aria-hidden="true"></i>
+                    <strong>Dashboard</strong>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span class="today-date" id="currentDate"></span>
+                <button class="refresh-button" id="refreshBtn" type="button">
+                    <i class="bx bx-refresh" aria-hidden="true"></i>
+                    Refresh
+                </button>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <section class="welcome-row">
+                <div>
+                    <p class="eyebrow">ADMIN OVERVIEW</p>
+                    <h1 id="welcomeName">Welcome back!</h1>
+                    <p class="welcome-copy">Here is what is happening in your WEB-CLUB community.</p>
+                </div>
+                <a class="primary-link" href="pages/admin-messages.html">
+                    <i class="bx bx-envelope" aria-hidden="true"></i>
+                    Open messages
+                </a>
+            </section>
+
+            <div class="admin-status" id="adminStatus" role="status" aria-live="polite">
+                Checking administrator access...
+            </div>
+
+            <section class="stats-grid" aria-label="Community statistics">
+                <article class="stat-card stat-blue">
+                    <div class="stat-top">
+                        <i class="stat-icon bx bx-group" aria-hidden="true"></i>
+                        <span class="stat-label">Total members</span>
+                    </div>
+                    <strong class="stat-value" id="totalMembers">—</strong>
+                    <span class="stat-note">Registered community members</span>
+                </article>
+
+                <article class="stat-card stat-violet">
+                    <div class="stat-top">
+                        <i class="stat-icon bx bx-code-alt" aria-hidden="true"></i>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <strong class="stat-value" id="totalProjects">—</strong>
+                    <span class="stat-note">Projects shared by members</span>
+                </article>
+
+                <article class="stat-card stat-green">
+                    <div class="stat-top">
+                        <i class="stat-icon bx bx-calendar-event" aria-hidden="true"></i>
+                        <span class="stat-label">Events</span>
+                    </div>
+                    <strong class="stat-value" id="totalEvents">—</strong>
+                    <span class="stat-note">Club events in the system</span>
+                </article>
+
+                <article class="stat-card stat-cyan">
+                    <div class="stat-top">
+                        <i class="stat-icon bx bx-envelope" aria-hidden="true"></i>
+                        <span class="stat-label">Messages</span>
+                    </div>
+                    <strong class="stat-value" id="totalMessages">—</strong>
+                    <span class="stat-note">Contact messages received</span>
+                </article>
+            </section>
+
+            <section class="quick-create-section" aria-labelledby="quickCreateHeading">
+                <div class="quick-create-heading">
+                    <div>
+                        <p class="eyebrow">QUICK ACTIONS</p>
+                        <h2 id="quickCreateHeading">Create a community card</h2>
+                        <p class="welcome-copy">Add a project, event, or member profile without hunting for the management page.</p>
+                    </div>
+                </div>
+                <div class="quick-create-grid">
+                    <a class="quick-create-card quick-create-project" href="pages/admin-projects.html?action=create">
+                        <span class="quick-create-icon"><i class="bx bx-code-alt" aria-hidden="true"></i></span>
+                        <span><strong>Add project</strong><small>Publish a new community project</small></span>
+                        <i class="bx bx-plus quick-create-plus" aria-hidden="true"></i>
+                    </a>
+                    <a class="quick-create-card quick-create-event" href="pages/admin-events.html?action=create">
+                        <span class="quick-create-icon"><i class="bx bx-calendar-event" aria-hidden="true"></i></span>
+                        <span><strong>Add event</strong><small>Create an upcoming club event</small></span>
+                        <i class="bx bx-plus quick-create-plus" aria-hidden="true"></i>
+                    </a>
+                    <a class="quick-create-card quick-create-member" href="pages/admin-members.html?action=create">
+                        <span class="quick-create-icon"><i class="bx bx-group" aria-hidden="true"></i></span>
+                        <span><strong>Add member</strong><small>Create a profile for an account</small></span>
+                        <i class="bx bx-plus quick-create-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section class="dashboard-lower">
+                <article class="panel community-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">GET STARTED</p>
+                            <h2>Community workspace</h2>
+                        </div>
+                        <i class="panel-symbol bx bx-sparkles" aria-hidden="true"></i>
+                    </div>
+                    <p class="panel-description">
+                        Keep an eye on your community and jump directly to the pages you manage most.
+                    </p>
+
+                    <div class="shortcut-list">
+                        <a class="shortcut" href="pages/admin-messages.html">
+                            <i class="shortcut-icon messages-icon bx bx-envelope" aria-hidden="true"></i>
+                            <span class="shortcut-copy">
+                                <strong>Contact messages</strong>
+                                <small>Review and manage visitor inquiries</small>
+                            </span>
+                            <i class="shortcut-arrow bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+                        <a class="shortcut" href="pages/admin-members.html">
+                            <i class="shortcut-icon members-icon bx bx-group" aria-hidden="true"></i>
+                            <span class="shortcut-copy">
+                                <strong>Club members</strong>
+                                <small>See the WEB-CLUB community</small>
+                            </span>
+                            <i class="shortcut-arrow bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+                        <a class="shortcut" href="pages/admin-projects.html">
+                            <i class="shortcut-icon projects-icon bx bx-code-alt" aria-hidden="true"></i>
+                            <span class="shortcut-copy">
+                                <strong>Member projects</strong>
+                                <small>Explore work shared by members</small>
+                            </span>
+                            <i class="shortcut-arrow bx bx-right-arrow-alt" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <aside class="panel admin-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">ADMIN TOOLS</p>
+                            <h2>Quick links</h2>
+                        </div>
+                        <i class="panel-symbol tools-symbol bx bx-wrench" aria-hidden="true"></i>
+                    </div>
+                    <a class="quick-link" href="pages/admin-messages.html">
+                        <span>Manage messages</span>
+                        <i class="quick-link-icon messages-link-icon bx bx-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a class="quick-link" href="../frontend/index.html">
+                        <span>Open public website</span>
+                        <i class="quick-link-icon website-link-icon bx bx-globe" aria-hidden="true"></i>
+                    </a>
+                    <a class="quick-link" href="pages/admin-events.html">
+                        <span>Browse club events</span>
+                        <i class="quick-link-icon events-link-icon bx bx-calendar-event" aria-hidden="true"></i>
+                    </a>
+                    <div class="admin-tip">
+                        <i class="bx bx-info-circle" aria-hidden="true"></i>
+                        <p>Statistics are loaded from the WEB-CLUB API and require an administrator account.</p>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="panel admin-profile-panel" id="adminProfilePanel" aria-labelledby="adminProfileHeading" hidden>
+                <div class="admin-profile-avatar" id="dashboardProfileAvatar" aria-hidden="true">
+                    <i class="bx bx-desktop"></i>
+                </div>
+                <div class="admin-profile-content">
+                    <div class="admin-profile-heading">
+                        <div>
+                            <p class="eyebrow">YOUR ACCOUNT</p>
+                            <h2 id="adminProfileHeading">Administrator profile</h2>
+                        </div>
+                        <div class="admin-profile-actions">
+                            <span class="admin-role-badge"><i class="bx bx-shield-quarter" aria-hidden="true"></i>Administrator</span>
+                            <a class="admin-profile-link" href="pages/profile.html"><i class="bx bx-right-arrow-alt" aria-hidden="true"></i>View profile</a>
+                        </div>
+                    </div>
+                    <p class="admin-profile-name" id="dashboardProfileName">—</p>
+                    <div class="admin-profile-details">
+                        <span><i class="bx bx-envelope" aria-hidden="true"></i><span id="dashboardProfileEmail">—</span></span>
+                        <span><i class="bx bx-calendar" aria-hidden="true"></i><span id="dashboardProfileJoined">—</span></span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/admin-common.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+</body>
+
+</html>
